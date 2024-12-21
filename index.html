@@ -18,75 +18,87 @@
                 aria-valuemax="100"></div>
         </div>
 
-        <div id="resumeForm">
+        <form id="resumeForm" action="#" novalidate>
             <!-- Step 1: Personal Information -->
-            <form id="step1" class="step active">
-                <h2 class="text-center mb-3">Personal Information</h2>
+            <fieldset id="step1" class="step active">
+                <legend>Personal Information</legend>
                 <div class="form-group">
+                    <label for="name">Full Name</label>
                     <input type="text" id="name" class="form-control" placeholder="Your Full Name" required>
                 </div>
                 <div class="form-group">
+                    <label for="email">Email</label>
                     <input type="email" id="email" class="form-control" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
+                    <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number" required>
                 </div>
                 <div class="text-center">
-                    <!-- <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button> -->
-                     <input type="submit" value="next" onclick=step1hide()>
+                    <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
                 </div>
-            </form>
+            </fieldset>
 
             <!-- Step 2: Experience -->
-            <div id="step2" class="step" style="display: none;">
-                <h2 class="text-center mb-3">Experience</h2>
+            <fieldset id="step2" class="step" style="display: none;">
+                <legend>Experience</legend>
                 <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
                     <input type="text" id="jobTitle" class="form-control" placeholder="Job Title" required>
                 </div>
                 <div class="form-group">
+                    <label for="company">Company Name</label>
                     <input type="text" id="company" class="form-control" placeholder="Company Name" required>
                 </div>
                 <div class="form-group">
+                    <label for="startDate">Start Date</label>
                     <input type="date" id="startDate" class="form-control" required>
                 </div>
                 <div class="form-group">
+                    <label for="endDate">End Date</label>
                     <input type="date" id="endDate" class="form-control" required>
                 </div>
                 <div class="form-group">
+                    <label for="description">Job Description</label>
                     <textarea id="description" class="form-control" placeholder="Job Description" required></textarea>
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-secondary" onclick="previousStep(1)">Back</button>
                     <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Step 3: Education -->
-            <div id="step3" class="step" style="display: none;">
-                <h2 class="text-center mb-3">Education</h2>
+            <fieldset id="step3" class="step" style="display: none;">
+                <legend>Education</legend>
                 <div class="form-group">
+                    <label for="degree">Degree</label>
                     <input type="text" id="degree" class="form-control" placeholder="Degree" required>
                 </div>
                 <div class="form-group">
+                    <label for="school">School Name</label>
                     <input type="text" id="school" class="form-control" placeholder="School Name" required>
                 </div>
                 <div class="form-group">
+                    <label for="eduStartDate">Start Date</label>
                     <input type="date" id="eduStartDate" class="form-control" required>
                 </div>
                 <div class="form-group">
+                    <label for="eduEndDate">End Date</label>
                     <input type="date" id="eduEndDate" class="form-control" required>
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-secondary" onclick="previousStep(2)">Back</button>
                     <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Step 4: Skills -->
-            <div id="step4" class="step" style="display: none;">
-                <h2 class="text-center mb-3">Skills</h2>
+            <fieldset id="step4" class="step" style="display: none;">
+                <legend>Skills</legend>
                 <div class="form-group">
-                    <input type="text" id="skills" class="form-control" placeholder="Enter a Skill" />
+                    <label for="skills">Add a Skill</label>
+                    <input type="text" id="skills" class="form-control" placeholder="Enter a Skill">
                     <button type="button" class="btn btn-info mt-2" onclick="addSkill()">Add Skill</button>
                 </div>
                 <ul id="skillsList" class="list-group"></ul>
@@ -94,76 +106,85 @@
                     <button type="button" class="btn btn-secondary" onclick="previousStep(3)">Back</button>
                     <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Step 5: Projects -->
-            <div id="step5" class="step" style="display: none;">
-                <h2 class="text-center mb-3">Projects</h2>
+            <fieldset id="step5" class="step" style="display: none;">
+                <legend>Projects</legend>
                 <div class="form-group">
+                    <label for="projectTitle">Project Title</label>
                     <input type="text" id="projectTitle" class="form-control" placeholder="Project Title" required>
                 </div>
                 <div class="form-group">
-                    <textarea id="projectDescription" class="form-control" placeholder="Project Description" required></textarea>
+                    <label for="projectDescription">Project Description</label>
+                    <textarea id="projectDescription" class="form-control" placeholder="Project Description"
+                        required></textarea>
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-secondary" onclick="previousStep(4)">Back</button>
                     <button type="button" class="btn btn-primary" onclick="nextStep(6)">Next</button>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Step 6: Certifications -->
-            <div id="step6" class="step" style="display: none;">
-                <h2 class="text-center mb-3">Certifications</h2>
+            <fieldset id="step6" class="step" style="display: none;">
+                <legend>Certifications</legend>
                 <div class="form-group">
-                    <input type="text" id="certification" class="form-control" placeholder="Certification Name" required>
+                    <label for="certification">Certification Name</label>
+                    <input type="text" id="certification" class="form-control" placeholder="Certification Name"
+                        required>
                 </div>
                 <div class="form-group">
+                    <label for="issuedBy">Issued By</label>
                     <input type="text" id="issuedBy" class="form-control" placeholder="Issued By" required>
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-secondary" onclick="previousStep(5)">Back</button>
                     <button type="button" class="btn btn-primary" onclick="nextStep(7)">Next</button>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Step 7: Languages -->
-            <div id="step7" class="step" style="display: none;">
-                <h2 class="text-center mb-3">Languages</h2>
+            <fieldset id="step7" class="step" style="display: none;">
+                <legend>Languages</legend>
                 <div class="form-group">
+                    <label for="language">Language</label>
                     <input type="text" id="language" class="form-control" placeholder="Language" required>
                 </div>
                 <div class="form-group">
+                    <label for="proficiency">Proficiency Level</label>
                     <input type="text" id="proficiency" class="form-control" placeholder="Proficiency Level" required>
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-secondary" onclick="previousStep(6)">Back</button>
                     <button type="button" class="btn btn-primary" onclick="nextStep(8)">Next</button>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Step 8: References -->
-            <div id="step8" class="step" style="display: none;">
+            <fieldset id="step8" class="step" style="display: none;">
                 <h2 class="text-center mb-3">References</h2>
                 <div class="form-group">
                     <input type="text" id="referenceName" class="form-control" placeholder="Reference Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="referenceContact" class="form-control" placeholder="Reference Contact Info" required>
+                    <input type="text" id="referenceContact" class="form-control" placeholder="Reference Contact Info"
+                        required>
                 </div>
                 <div class="text-center">
                     <button type="button" class="btn btn-secondary" onclick="previousStep(7)">Back</button>
                     <button type="button" class="btn btn-primary" onclick="generateResume()">Generate Resume</button>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Final Step: Download -->
-            <div id="finalStep" class="step" style="display: none;">
+            <fieldset id="finalStep" class="step" style="display: none;">
                 <h2 class="text-center mb-3">Download Your Resume</h2>
                 <div class="text-center">
                     <button type="button" class="btn btn-success" onclick="downloadPDF()">Download PDF</button>
                     <button type="button" class="btn btn-success" onclick="downloadWord()">Download Word</button>
                 </div>
-            </div>
+            </fieldset>
         </form>
     </div>
 
